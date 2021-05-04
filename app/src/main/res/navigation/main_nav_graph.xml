@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/formInitFragment">
+    <fragment
+        android:id="@+id/formPage1Fragment"
+        android:name="com.deushdezt.stepform.fragments.FormPage1Fragment"
+        tools:layout="@layout/fragment_form1"
+        android:label="FormPage1" />
+    <fragment
+        android:id="@+id/formPage2Fragment"
+        android:name="com.deushdezt.stepform.fragments.FormPage2Fragment"
+        tools:layout="@layout/fragment_form2"
+        android:label="FormPage2Fragment" />
+    <fragment
+        android:id="@+id/resultsFragment"
+        android:name="com.deushdezt.stepform.fragments.ResultsFragment"
+        tools:layout="@layout/fragment_results"
+        android:label="ResultsFragment" />
+    <fragment
+        android:id="@+id/formInitFragment"
+        android:name="com.deushdezt.stepform.fragments.FormInitFragment"
+        tools:layout="@layout/fragment_form_init"
+        android:label="FormInitFragment" />
+</navigation>
