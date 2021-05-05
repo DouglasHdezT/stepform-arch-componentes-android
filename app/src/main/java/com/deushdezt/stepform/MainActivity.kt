@@ -7,7 +7,7 @@ import androidx.navigation.NavHost
 import com.deushdezt.stepform.fragments.ControlFragment
 import com.deushdezt.stepform.viewmodels.FormViewModel
 
-class MainActivity : AppCompatActivity(), ControlFragment.OnClickListener {
+class MainActivity : AppCompatActivity() {
 
     private val formViewModel: FormViewModel by viewModels()
 
@@ -23,13 +23,5 @@ class MainActivity : AppCompatActivity(), ControlFragment.OnClickListener {
             val fragmentId = formViewModel.getCurrentPageId()
             navController.navigate(fragmentId)
         }
-    }
-
-    override fun onNext() {
-        formViewModel.onNext()
-    }
-
-    override fun onPrev() {
-        formViewModel.onPrev()
     }
 }

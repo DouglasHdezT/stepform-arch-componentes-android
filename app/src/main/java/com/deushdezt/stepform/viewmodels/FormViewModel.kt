@@ -10,6 +10,10 @@ class FormViewModel: ViewModel() {
 
     var firstname = ""
     var lastname = ""
+
+    val name: String
+        get() = "$firstname $lastname"
+
     var age = ""
     var email = ""
 
@@ -17,11 +21,17 @@ class FormViewModel: ViewModel() {
     val current: LiveData<Int>
         get() = _current
 
-    init {
-        _current.value = 0
-    }
+    private val _progress = MutableLiveData<Int>()
+    val progress: LiveData<Int>
+        get() = _progress
 
     private val formPages: List<Int> = listOf(R.id.formInitFragment, R.id.formPage1Fragment, R.id.formPage2Fragment, R.id.resultsFragment)
+
+    init {
+        _current.value = 0
+        updateProgress()
+    }
+
 
     fun getPerson() = Person(firstname, lastname, age.toIntOrNull()?:0, email)
 
@@ -29,14 +39,21 @@ class FormViewModel: ViewModel() {
         _current.apply {
             value = value?.plus(1)?.coerceIn(0, formPages.lastIndex)
         }
+        updateProgress()
     }
 
     fun onPrev() {
         _current.apply {
             value = value?.minus(1)?.coerceIn(0, formPages.lastIndex)
         }
+        updateProgress()
+    }
+
+    private fun updateProgress() {
+        _progress.apply {
+            value = ((current.value?.times(100F))?.div(formPages.lastIndex))?.toInt()
+        }
     }
 
     fun getCurrentPageId() = formPages[_current.value?:0]
-    fun getLastIndexOfList() = formPages.lastIndex
 }

@@ -1,36 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
-    android:gravity="center"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <Button
-        style="@style/Widget.MaterialComponents.Button.TextButton"
-        android:id="@+id/prev_action"
-        android:padding="@dimen/default_gap"
-        android:text="&lt;"
-        android:textSize="@dimen/row_size"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.deushdezt.stepform.viewmodels.FormViewModel" />
+    </data>
 
-    <ProgressBar
-        android:id="@+id/form_progress_bar"
-        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-        android:progress="0"
-        android:padding="@dimen/default_gap"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <Button
-        style="@style/Widget.MaterialComponents.Button.TextButton"
-        android:id="@+id/next_action"
-        android:padding="@dimen/default_gap"
-        android:text="&gt;"
-        android:textSize="@dimen/row_size"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        <Button
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:id="@+id/prev_action"
+            android:padding="@dimen/default_gap"
+            android:text="&lt;"
+            android:onClick="@{()-> viewmodel.onPrev()}"
+            android:textSize="@dimen/row_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
-</LinearLayout>
+        <ProgressBar
+            android:id="@+id/form_progress_bar"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:progress="@{viewmodel.progress}"
+            android:padding="@dimen/default_gap"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Button
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:id="@+id/next_action"
+            android:padding="@dimen/default_gap"
+            android:text="&gt;"
+            android:onClick="@{()-> viewmodel.onNext()}"
+            android:textSize="@dimen/row_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+</layout>

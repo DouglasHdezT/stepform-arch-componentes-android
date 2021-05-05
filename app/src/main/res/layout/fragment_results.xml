@@ -1,34 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:padding="@dimen/default_gap"
-    android:gravity="center"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <TextView
-        android:id="@+id/name_result_text"
-        android:text="@string/name_result_template"
-        android:textSize="@dimen/results_size"
-        android:layout_marginBottom="@dimen/default_item_gap"
+    <data>
+        <variable
+            name="viewModel"
+            type="com.deushdezt.stepform.viewmodels.FormViewModel" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="@dimen/default_gap"
+        android:gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/age_result_text"
-        android:text="@string/age_result_template"
-        android:textSize="@dimen/results_size"
-        android:layout_marginBottom="@dimen/default_item_gap"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/name_result_text"
+            tools:text="@string/name_result_template"
+            android:text="@{String.format(@string/name_result_template, viewModel.name)}"
+            android:textSize="@dimen/results_size"
+            android:layout_marginBottom="@dimen/default_item_gap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-    <TextView
-        android:id="@+id/email_result_text"
-        android:text="@string/email_result_template"
-        android:textSize="@dimen/results_size"
-        android:layout_marginBottom="@dimen/default_item_gap"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/age_result_text"
+            tools:text="@string/age_result_template"
+            android:text="@{String.format(@string/age_result_template, viewModel.person.age)}"
+            android:textSize="@dimen/results_size"
+            android:layout_marginBottom="@dimen/default_item_gap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/email_result_text"
+            tools:text="@string/email_result_template"
+            android:text="@{String.format(@string/email_result_template, viewModel.person.email)}"
+            android:textSize="@dimen/results_size"
+            android:layout_marginBottom="@dimen/default_item_gap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+</layout>

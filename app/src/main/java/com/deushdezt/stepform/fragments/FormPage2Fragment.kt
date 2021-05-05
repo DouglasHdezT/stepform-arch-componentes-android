@@ -9,6 +9,7 @@ import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.deushdezt.stepform.R
+import com.deushdezt.stepform.databinding.FragmentForm2Binding
 import com.deushdezt.stepform.viewmodels.FormViewModel
 import java.lang.Exception
 import java.lang.NumberFormatException
@@ -22,23 +23,20 @@ class FormPage2Fragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_form2, container, false)
-
-        val ageField = view.findViewById<EditText>(R.id.age_form_input)
-        val emailField = view.findViewById<EditText>(R.id.email_form_input)
-
-        ageField.setText(formViewModel.age)
-        emailField.setText(formViewModel.email)
-
-        ageField.doAfterTextChanged {
-            formViewModel.age = it.toString()
+        val binding = FragmentForm2Binding.inflate(inflater, container, false).apply {
+            viewmodel = formViewModel
+            lifecycleOwner = viewLifecycleOwner
         }
 
-        emailField.doAfterTextChanged {
-            formViewModel.email = it.toString()
-        }
+        return binding.root.apply {
+            findViewById<EditText>(R.id.age_form_input).doAfterTextChanged {
+                formViewModel.age = it.toString()
+            }
 
-        return view
+            findViewById<EditText>(R.id.email_form_input).doAfterTextChanged {
+                formViewModel.email = it.toString()
+            }
+        }
     }
 
 }
