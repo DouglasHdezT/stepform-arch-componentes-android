@@ -9,7 +9,7 @@
     <string name="e_g_23_text">e.g. 23</string>
     <string name="e_g_email_text">e.g. 00004516@uca.edu.sv</string>
     <string name="name_result_template">Name: %1$s</string>
-    <string name="age_result_template">Age: %1$d</string>
+    <string name="age_result_template">Age: %1$s</string>
     <string name="email_result_template">Email: %1$s</string>
     <string name="human_resources_form_text">Human Resources Form</string>
 </resources>

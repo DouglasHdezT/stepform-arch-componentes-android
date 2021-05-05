@@ -27,7 +27,7 @@
         <TextView
             android:id="@+id/age_result_text"
             tools:text="@string/age_result_template"
-            android:text="@{String.format(@string/age_result_template, viewModel.person.age)}"
+            android:text="@{String.format(@string/age_result_template, viewModel.age)}"
             android:textSize="@dimen/results_size"
             android:layout_marginBottom="@dimen/default_item_gap"
             android:layout_width="match_parent"
@@ -36,7 +36,7 @@
         <TextView
             android:id="@+id/email_result_text"
             tools:text="@string/email_result_template"
-            android:text="@{String.format(@string/email_result_template, viewModel.person.email)}"
+            android:text="@{String.format(@string/email_result_template, viewModel.email)}"
             android:textSize="@dimen/results_size"
             android:layout_marginBottom="@dimen/default_item_gap"
             android:layout_width="match_parent"

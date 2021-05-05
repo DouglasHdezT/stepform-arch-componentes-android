@@ -8,14 +8,14 @@ import com.deushdezt.stepform.data.Person
 
 class FormViewModel: ViewModel() {
 
-    var firstname = ""
-    var lastname = ""
+    var firstname = MutableLiveData("")
+    var lastname = MutableLiveData("")
 
     val name: String
-        get() = "$firstname $lastname"
+        get() = "${firstname.value} ${lastname.value}"
 
-    var age = ""
-    var email = ""
+    var age = MutableLiveData("")
+    var email = MutableLiveData("")
 
     private val _current = MutableLiveData<Int>()
     val current: LiveData<Int>
@@ -33,7 +33,7 @@ class FormViewModel: ViewModel() {
     }
 
 
-    fun getPerson() = Person(firstname, lastname, age.toIntOrNull()?:0, email)
+    fun getPerson() = Person(firstname.value ?: "", lastname.value?: "", age.value?.toIntOrNull()?:0, email.value?: "")
 
     fun onNext(){
         _current.apply {

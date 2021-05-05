@@ -26,7 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="number"
-            android:text="@{viewmodel.age}"
+            android:text="@={viewmodel.age}"
             android:hint="@string/e_g_23_text"
             android:importantForAutofill="no"
             android:layout_marginBottom="@dimen/default_gap" />
@@ -43,7 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
-            android:text="@{viewmodel.email}"
+            android:text="@={viewmodel.email}"
             android:hint="@string/e_g_email_text"
             android:importantForAutofill="no"
             android:layout_marginBottom="@dimen/default_item_gap" />

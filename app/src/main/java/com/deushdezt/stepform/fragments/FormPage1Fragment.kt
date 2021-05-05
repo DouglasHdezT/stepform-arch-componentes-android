@@ -26,15 +26,7 @@ class FormPage1Fragment: Fragment() {
             lifecycleOwner = viewLifecycleOwner
         }
 
-        return binding.root.apply {
-            findViewById<EditText>(R.id.name_form_input).doAfterTextChanged {
-                formViewModel.firstname = it.toString()
-            }
-
-            findViewById<EditText>(R.id.lastname_form_input).doAfterTextChanged {
-                formViewModel.lastname = it.toString()
-            }
-        }
+        return binding.root
     }
 
 }

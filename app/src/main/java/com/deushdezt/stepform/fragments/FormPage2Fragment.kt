@@ -28,15 +28,7 @@ class FormPage2Fragment: Fragment() {
             lifecycleOwner = viewLifecycleOwner
         }
 
-        return binding.root.apply {
-            findViewById<EditText>(R.id.age_form_input).doAfterTextChanged {
-                formViewModel.age = it.toString()
-            }
-
-            findViewById<EditText>(R.id.email_form_input).doAfterTextChanged {
-                formViewModel.email = it.toString()
-            }
-        }
+        return binding.root
     }
 
 }
