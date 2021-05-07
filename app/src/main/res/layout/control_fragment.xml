@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.deushdezt.stepform.FormViewModel" />
+    </data>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/prev_action"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:padding="@dimen/default_gap"
+            android:text="&lt;"
+            android:onClick="@{()-> viewmodel.onPrev()}"
+            android:textSize="@dimen/button_text_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ProgressBar
+            android:id="@+id/form_progress_bar"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="0dp"
+            android:progress="@{viewmodel.progress}"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/next_action"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:padding="@dimen/default_gap"
+            android:text="&gt;"
+            android:onClick="@{()-> viewmodel.onNext()}"
+            android:textSize="@dimen/button_text_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+</layout>

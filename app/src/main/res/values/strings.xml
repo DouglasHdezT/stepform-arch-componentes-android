@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">StepForm</string>
+    <string name="hr_form_text">HR form</string>
+    <string name="firstname_label">Firstname</string>
+    <string name="firstname_hint">e.g. Douglas</string>
+    <string name="lastname_label">Lastname</string>
+    <string name="lastname_hint">e.g. Hernández</string>
+    <string name="age_label">Age</string>
+    <string name="age_hint">e.g. 23</string>
+    <string name="email_label">Email</string>
+    <string name="email_hint">e.g. 00004516@uca.edu.sv</string>
+    <string name="name_template">Name: %1$s %2$s</string>
+    <string name="age_template">Age: %1$s</string>
+    <string name="email_template">Email: %1$s</string>
 </resources>

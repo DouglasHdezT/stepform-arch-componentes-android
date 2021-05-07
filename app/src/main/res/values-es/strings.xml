@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">StepForm</string>
+    <string name="hr_form_text">RH Formulario</string>
+    <string name="firstname_label">Nombres</string>
+    <string name="firstname_hint">p.e. Douglas</string>
+    <string name="lastname_label">Apellidos</string>
+    <string name="lastname_hint">p.e. Hernández</string>
+    <string name="age_label">Edad</string>
+    <string name="age_hint">p.e. 23</string>
+    <string name="email_label">Correo</string>
+    <string name="email_hint">p.e. 00004516@uca.edu.sv</string>
+    <string name="name_template">Nombre: %1$s %2$s</string>
+    <string name="age_template">Edad: %1$s</string>
+    <string name="email_template">Correo: %1$s</string>
+</resources>

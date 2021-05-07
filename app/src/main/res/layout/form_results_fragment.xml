@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.deushdezt.stepform.FormViewModel" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="@dimen/default_gap"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:text="@{@string/name_template(viewmodel.firstname, viewmodel.lastname)}"
+            android:layout_marginBottom="@dimen/defult_item_gap"
+            android:textSize="@dimen/results_size"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="@{@string/age_template(viewmodel.age)}"
+            android:layout_marginBottom="@dimen/defult_item_gap"
+            android:textSize="@dimen/results_size"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="@{@string/email_template(viewmodel.email)}"
+            android:layout_marginBottom="@dimen/defult_item_gap"
+            android:textSize="@dimen/results_size"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+</layout>
